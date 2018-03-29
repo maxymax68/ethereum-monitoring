@@ -43,7 +43,7 @@ mongoose.connect('mongodb://localhost/mongoose_basics', function (err) {
  		return;
  	}
  	else{
- 		//console.log(addresses[index]);
+		sleep(500);
   		(async () => {
         try {
           var harvest ={
@@ -66,12 +66,11 @@ mongoose.connect('mongodb://localhost/mongoose_basics', function (err) {
           });
           txes[index].loaded = true;
           txes[index].save();
-          //console.log(txes[index]);
+   	  sleep(500);
      	 } catch (err) {
      		 	console.log(err);
      	 }
  	 })();
-   sleep(1000);
  	 loadToSS (txes, index+1);
   }
  }
